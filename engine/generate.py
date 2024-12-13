@@ -57,16 +57,17 @@ def main(args):
     # Auto-download a pre-trained model or load a custom SiT checkpoint from train.py:
     ckpt_path = args.ckpt
 
-    state_dict = torch.load(ckpt_path, map_location=f'cuda:{device}')['ema']
-    model.load_state_dict(state_dict)
+    GMem_state_dict = torch.load(ckpt_path, map_location=f'cuda:{device}')
+    
+    model.load_state_dict(GMem_state_dict['network'])
     model.eval()  # important!
     vae = AutoencoderKL.from_pretrained(f"pretrains/stabilityai/sd-vae-ft-{args.vae}").to(device)
 
-    print(f'loading bank:{args.bank_path}')
-    bank_path: str = args.bank_path
-    bank = torch.load(f=bank_path).to('cpu')
-    freq_path = bank_path.replace('pth', 'freq')
-    freq = torch.load(f=freq_path)
+    print(f'Loading bank...')
+    bank = GMem_state_dict['memorybank']
+    freq = GMem_state_dict['memoryfreq']
+    print(f'Bank Loaded with {len(freq)} snippets!')
+
 
     # Create folder to save samples:
     folder_name = f"GMem-XL-2000000-ImageNet256x256-bank640000"
@@ -157,7 +158,6 @@ if __name__ == "__main__":
 
     # logging/saving:
     parser.add_argument("--ckpt", type=str, default=None, help="Optional path to a SiT checkpoint.")
-    parser.add_argument("--bank-path", type=str, default=None)
     parser.add_argument("--sample-dir", type=str, default="outputs/samples")
 
     # model
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     parser.add_argument("--num-fid-samples", type=int, default=50_000)
 
     # sampling related hyperparameters
-    parser.add_argument("--mode", type=str, default="ode")
+    parser.add_argument("--mode", type=str, default="sde")
     parser.add_argument("--cfg-scale",  type=float, default=0)
     parser.add_argument("--projector-embed-dims", type=str, default="768,1024")
     parser.add_argument("--path-type", type=str, default="linear", choices=["linear", "cosine"])
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     parser.add_argument("--guidance-low", type=float, default=0.)
     parser.add_argument("--guidance-high", type=float, default=0.)
     
-    # GMem
+    # GMem required!
     parser.add_argument("--use-feature-condition", action=argparse.BooleanOptionalAction, default=False) 
     
 

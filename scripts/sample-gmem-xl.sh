@@ -12,5 +12,4 @@ torchrun --nnodes=1 --nproc_per_node=8 engine/generate.py \
   --cfg-scale=0 \
   --guidance-high=0 \
   --use-feature-condition \
-  --ckpt PATH/TO/CKPT \
-  --bank-path PATH/TO/BANK \
+  --ckpt "./ckpts/GMem_XL_2Miter_ImageNet-1K_K640000_5epo.pth" \   # CHANGE THIS!

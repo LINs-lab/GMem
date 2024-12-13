@@ -2,8 +2,9 @@
 
 ![Teaser image](./docs/selected_pics.png)
 
-[Preprint] Generative Modeling with Explicit Memory <br>
-Yi Tang, Peng Sun, Zhenglin Cheng, Tao Lin
+**[Preprint] Generative Modeling with Explicit Memory** <br>
+Yi Tang, Peng Sun, Zhenglin Cheng, Tao Lin <br>
+https://arxiv.org/abs/2412.08781<br>
 
 
 ### Abstract
@@ -13,7 +14,7 @@ Yi Tang, Peng Sun, Zhenglin Cheng, Tao Lin
 ---
 
 
-### System Requirements
+### Requirements
 
 - **Python and PyTorch:**
   - 64-bit Python 3.10 or later.
@@ -30,31 +31,24 @@ Yi Tang, Peng Sun, Zhenglin Cheng, Tao Lin
 
 ### Getting Started
 
-To reproduce the primary results from the paper, run the following script:
+To reproduce the results from the paper, run the following script:
 
 ```bash
 bash scripts/sample-gmem-xl.sh
 ```
 
-This is a minimal standalone script that loads the best pre-trained model and generates 50K images.
+**Important:** make sure to change `--ckpt` to correct path.
 
 ---
 
 ### Pre-trained Models and Memory Bank
 
-We offer the following pre-trained models and memory bank here:
+We offer the following pre-trained model and memory bank here:
 
-#### Model Checkpoints
-| Model Backbone       | Training Steps | File Location                |
-|----------------------|----------------|------------------------------|
-| SiT-XL/2             | 2M             | [Download Here](#)           |
-
-#### Memory Bank
-| Dataset              | Resolution     | Snippets         | Training Epo.  | File Location                |
-|----------------------|----------------|------------------|----------------|------------------------------|
-| ImageNet             | 256×256        | 640,000          | 5              | [Download Here](#)           |
-
-**Important:** Ensure that both `bank.pth` and `bank.freq` are saved in the same directory to enable proper functionality.
+#### GMem Checkpoints
+|    Backbone    | Training Steps | Dataset                   | Bank Size | Training Epo. | Download |
+|----------------|----------------|---------------------------|-----------|---------------|----------|
+| SiT-XL/2       | 2M             | ImageNet $256\times 256$  | 640,000   | 5             | [Huggingface](https://huggingface.co/Tangentone/GMem) |
 
 ---
 
@@ -72,5 +66,14 @@ This code is mainly built upon [SiT](https://github.com/willisma/SiT), [edm2](ht
 ### BibTeX
 
 ```bibtex
+@misc{tang2024generativemodelingexplicitmemory,
+      title={Generative Modeling with Explicit Memory}, 
+      author={Yi Tang and Peng Sun and Zhenglin Cheng and Tao Lin},
+      year={2024},
+      eprint={2412.08781},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.08781}, 
+}
 ```
 
