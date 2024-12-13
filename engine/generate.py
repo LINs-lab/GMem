@@ -61,7 +61,7 @@ def main(args):
     
     model.load_state_dict(GMem_state_dict['network'])
     model.eval()  # important!
-    vae = AutoencoderKL.from_pretrained(f"pretrains/stabilityai/sd-vae-ft-{args.vae}").to(device)
+    vae = AutoencoderKL.from_pretrained(f"stabilityai/sd-vae-ft-{args.vae}").to(device)
 
     print(f'Loading bank...')
     bank = GMem_state_dict['memorybank']
