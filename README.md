@@ -2,8 +2,11 @@
 
 ![Teaser image](./docs/selected_pics.png)
 
-[Preprint] Generative Modeling with Explicit Memory <br>
-Yi Tang, Peng Sun, Zhenglin Cheng, Tao Lin
+<div align="center">
+  Yi Tang :man_student:, <a href="https://sp12138.github.io/">Peng Sun :man_artist:</a>, Zhenglin Cheng :man_student:, <a href="https://tlin-taolin.github.io/">Tao Lin :skier:</a>
+
+  <a href="https://arxiv.org/abs/2412.08781">[arXiv] :page_facing_up:</a> | <a href="#bibliography">[BibTeX] :label:</a>
+</div>
 
 
 ### Abstract
@@ -64,13 +67,14 @@ We offer the following pre-trained models and memory bank here:
 
 ---
 
+### Bibliography
+
+If you find this repository helpful for your project, please consider citing our work:
+
+```
+```
+
+
 ### Acknowledgement
 
 This code is mainly built upon [SiT](https://github.com/willisma/SiT), [edm2](https://github.com/NVlabs/edm2), and [REPA](https://github.com/sihyun-yu/REPA) repositories.
-
-
-### BibTeX
-
-```bibtex
-```
-
