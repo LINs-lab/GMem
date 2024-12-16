@@ -65,14 +65,11 @@ We offer the following pre-trained model and memory bank here:
 If you find this repository helpful for your project, please consider citing our work:
 
 ```bibtex
-@misc{tang2024generativemodelingexplicitmemory,
-      title={Generative Modeling with Explicit Memory}, 
-      author={Yi Tang and Peng Sun and Zhenglin Cheng and Tao Lin},
-      year={2024},
-      eprint={2412.08781},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2412.08781}, 
+@article{tang2024generative,
+  title={Generative Modeling with Explicit Memory},
+  author={Tang, Yi and Sun, Peng and Cheng, Zhenglin and Lin, Tao},
+  journal={arXiv preprint arXiv:2412.08781},
+  year={2024}
 }
 ```
 
