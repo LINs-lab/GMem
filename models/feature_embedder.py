@@ -36,11 +36,12 @@ class FeatureEmbedder(nn.Module):
         Returns:
         - torch.Tensor: The embedded features with shape (bs, z, hidden_size).
         """
+        # Apply dropout during training
+        if train and self.dropout_prob > 0:
+            features = self.dropout(features)
+            
         # Apply the linear transformation to the input features
         embeddings = self.linear(features)
         
-        # Apply dropout during training
-        if train and self.dropout_prob > 0:
-            embeddings = self.dropout(embeddings)
-        
         return embeddings
+
