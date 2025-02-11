@@ -23,7 +23,7 @@
   The results are significant: GMem enhances both training, sampling efficiency, and diversity generation.
   This design on one hand reduces the reliance on network for memorize complex data distribution and thus enhancing both training and sampling efficiency.
   On ImageNet at $256 \times 256$ resolution, GMem achieves a $50\times$ training speedup compared to SiT, reaching **FID $=7.66$** in fewer than $28$ epochs (**$\sim 4$ hours** training time), while SiT requires $1400$ epochs.
-  Without classifier-free guidance, GMem achieves state-of-the-art (SoTA) performance **FID $=1.59$** in $160$ epochs with **only $\sim 20$ hours** of training, outperforming LightningDiT which requires $800$ epochs and $\sim 95$ hours to attain FID $=2.17$.
+  Without classifier-free guidance, GMem achieves state-of-the-art (SoTA) performance **FID $=1.53$** in $160$ epochs with **only $\sim 20$ hours** of training, outperforming LightningDiT which requires $800$ epochs and $\sim 95$ hours to attain FID $=2.17$.
 
 ---
 
