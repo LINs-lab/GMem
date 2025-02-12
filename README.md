@@ -12,7 +12,7 @@
 - **$256\times 256$**: ~**$20\text{h}$ total training time** ($160$ epochs) → $100$ NFE → **FID $1.53$**  
 - **$512\times 512$**: ~**$50\text{h}$ total training time** ($400$ epochs) → $100$ NFE → **FID $1.89$**  
 
-
+All training time measurements are obtained on an 8×H800 GPU cluster.
 
 ### Abstract
 
