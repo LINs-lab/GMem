@@ -8,6 +8,10 @@
 
 ![Teaser image](./assets/docs/selected_pics.png)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/generative-modeling-with-explicit-memory/image-generation-on-cifar-10)](https://paperswithcode.com/sota/image-generation-on-cifar-10?p=generative-modeling-with-explicit-memory)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/generative-modeling-with-explicit-memory/image-generation-on-imagenet-256x256)](https://paperswithcode.com/sota/image-generation-on-imagenet-256x256?p=generative-modeling-with-explicit-memory)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/generative-modeling-with-explicit-memory/image-generation-on-imagenet-512x512)](https://paperswithcode.com/sota/image-generation-on-imagenet-512x512?p=generative-modeling-with-explicit-memory)
+
 **ImageNet Generation (w/o cfg or any other guidance techniques):**
 - **$256\times 256$**: ~**$20\text{h}$ total training time** ($160$ epochs) → $100$ NFE → **FID $1.53$**  
 - **$512\times 512$**: ~**$50\text{h}$ total training time** ($400$ epochs) → $100$ NFE → **FID $1.89$**  

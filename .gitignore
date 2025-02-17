@@ -1,5 +1,5 @@
-*pretrains*
-*data*
+*/pretrains
+*/data
 *.pyc*
 *.json
 ckpts/*
