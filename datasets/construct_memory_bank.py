@@ -23,8 +23,8 @@ from models.dinov2 import get_dino_v2_model_256, get_dino_v2_representation
 #     ...
 
 # Default hyper-parameters
-DEFAULT_DATA_PATH = "data/preprocessed/in1kxxs256/images"  
-DEFAULT_OUTP_PATH = "data/preprocessed/in1kxxs256/banks"  
+DEFAULT_DATA_PATH = ""  
+DEFAULT_OUTP_PATH = ""  
 
 class CustomImageDataset(Dataset):
     """

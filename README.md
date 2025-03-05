@@ -118,16 +118,6 @@ To generate new memory snippets by interpolating between two existing images, fo
 
 3. **Modify the Configuration**: After extracting the latents, you need to update the `data:data_path` in the `configs/gmem_sde_xl.yaml` file. Set this path to the location where the extracted latents are stored. This ensures that GMem-XL can access the processed latents during training.
 
----
-
-### Train GMem
-
-With the data prepared and the latents extracted, you can proceed to train the GMem-XL model by simply run the following script:
-
-```bash
-bash scripts/train_gmem_xl.sh
-```
-
 
 ---
 
@@ -138,11 +128,11 @@ Organize your dataset directory as follows (supports .jpg/.png/.jpeg formats):
 ```bash
 data_path/
 ├── folder_001/
-│   ├── image_001.jpg
-│   ├── image_002.png
+│   ├── image_101.jpg
+│   ├── image_102.png
 │   └── ...
 ├── folder_002/
-│   ├── image_101.jpg
+│   ├── image_201.jpg
 │   └── ...
 └── ...
 ```
@@ -153,6 +143,20 @@ Execute with required parameters:
 bash scripts/construct_memory_bank.sh 
 ```
 You may need to modify the script to specify the dataset path and output path.
+
+#### Step 3: Update Configuration
+Update the `GMem:bank_path` in the `configs/gmem_sde_xl.yaml` file with the path to the constructed memory bank.
+
+
+---
+
+### Train GMem
+
+With the data prepared and the latents extracted, you can proceed to train the GMem-XL model by simply run the following script:
+
+```bash
+bash scripts/train_gmem_xl.sh
+```
 
 ---
 
