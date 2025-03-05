@@ -55,11 +55,11 @@ To set up the evaluation and sampling of images from the pretrained GMem-XL mode
 
    - **Pretrained model**: Download the pretrained weights for the network and corresponding memory bank from the provided link on Huggingface:
 
-|    Backbone    | Training Epoch | Dataset                   | Bank Size | FID | Download |
-|----------------|----------------|---------------------------|-----------|-----|----------|
+|    Backbone    | Training Epoch | Dataset                   | Bank Size | FID | Download                                              |
+|----------------|----------------|---------------------------|-----------|-----|-------------------------------------------------------|
 | LightningDiT-XL|   160          | ImageNet $256\times 256$  | 1.28M     |1.53 | [Huggingface](https://huggingface.co/Tangentone/GMem) |
    
-   - **VA-VAE Tokenizer**: You also need the VA-VAE tokenizer. Download the tokenizer from the official repository at [VA-VAE on GitHub](https://github.com/hustvl/LightningDiT/tree/main?tab=readme-ov-file#inference-with-pre-trained-models).
+   - **VA-VAE Tokenizer**: You also need the VA-VAE tokenizer. Download the tokenizer from the official repository at [VA-VAE](https://huggingface.co/hustvl/lightningdit-xl-imagenet256-800ep/blob/main/lightningdit-xl-imagenet256-800ep.pt).
 
 #### 2. **Modify Config Files:**
 
@@ -108,7 +108,7 @@ To generate new memory snippets by interpolating between two existing images, fo
 
 ### Preparing Data
 
-1. **Set up VA-VAE**: Follow the instructions in the  **Evaluation**  and [VA-VAE tutorial](https://github.com/hustvl/LightningDiT/blob/main/docs/tutorial.md) to properly set up and configure the VA-VAE model. 
+1. **Set up VA-VAE**: Follow the instructions in the  **Evaluation** to properly set up and configure the VA-VAE(https://github.com/hustvl/LightningDiT/blob/main/docs/tutorial.md) model. 
    
 2. **Extract Latents**: Once VA-VAE is set up, you can run the following script to extract the latents for all ImageNet images:
    ```bash
@@ -130,6 +130,32 @@ bash scripts/train_gmem_xl.sh
 
 
 ---
+
+### Constructing Memory Bank
+
+#### Step 1: Prepare Dataset Structure
+Organize your dataset directory as follows (supports .jpg/.png/.jpeg formats):
+```bash
+data_path/
+├── folder_001/
+│   ├── image_001.jpg
+│   ├── image_002.png
+│   └── ...
+├── folder_002/
+│   ├── image_101.jpg
+│   └── ...
+└── ...
+```
+
+#### Step 2: Run Construction Script
+Execute with required parameters:
+```bash
+bash scripts/construct_memory_bank.sh 
+```
+You may need to modify the script to specify the dataset path and output path.
+
+---
+
 
 ### Bibliography
 
