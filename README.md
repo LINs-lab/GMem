@@ -58,6 +58,7 @@ To set up the evaluation and sampling of images from the pretrained GMem-XL mode
 |    Backbone    | Training Epoch | Dataset                   | Bank Size | FID | Download                                              |
 |----------------|----------------|---------------------------|-----------|-----|-------------------------------------------------------|
 | LightningDiT-XL|   160          | ImageNet $256\times 256$  | 1.28M     |1.53 | [Huggingface](https://huggingface.co/Tangentone/GMem) |
+| LightningDiT-XL|   600          | ImageNet $256\times 256$  | 1.28M     |1.32 | [Huggingface](https://huggingface.co/Tangentone/GMem) |
    
    - **VA-VAE Tokenizer**: You also need the VA-VAE tokenizer. Download the tokenizer from the official repository at [VA-VAE](https://huggingface.co/hustvl/lightningdit-xl-imagenet256-800ep/blob/main/lightningdit-xl-imagenet256-800ep.pt).
 
